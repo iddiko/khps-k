@@ -1,6 +1,8 @@
 import { Inquiry, Locale, Menu, PageData, SiteData } from "./types";
 
-export const apiBase = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:4000";
+const apiBaseValue = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:4000";
+
+export { apiBaseValue as apiBase };
 
 const text = (ko: string, en: string, zh: string) => ({ ko, en, zh });
 
