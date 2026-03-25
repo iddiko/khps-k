@@ -1,0 +1,17 @@
+<svg width="560" height="120" viewBox="0 0 560 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lg1" x1="28" y1="8" x2="78" y2="86" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#28B8D6"/>
+      <stop offset="1" stop-color="#0A5FAA"/>
+    </linearGradient>
+    <linearGradient id="lg2" x1="58" y1="58" x2="122" y2="114" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8FD13E"/>
+      <stop offset="1" stop-color="#2E8D3B"/>
+    </linearGradient>
+  </defs>
+  <path d="M64 10C36 22 17 49 17 79c0 19 9 35 24 45-8-22-3-48 14-69 10-12 14-25 9-45z" fill="url(#lg1)"/>
+  <path d="M34 99c17-7 33-6 48 2 17 9 29 9 41 4-7 14-21 22-41 24-23 1-39-7-48-30z" fill="url(#lg2)"/>
+  <path d="M87 28c16 12 25 29 25 47 0 18-8 34-22 46 4-16 1-31-8-46-8-15-8-30 5-47z" fill="#0E7ABF"/>
+  <text x="145" y="58" fill="#0967B5" font-size="42" font-family="'Segoe UI', 'Malgun Gothic', sans-serif" font-weight="700">(주)대한수소발전</text>
+  <text x="148" y="90" fill="#3A76A8" font-size="18" font-family="'Segoe UI', 'Malgun Gothic', sans-serif" font-weight="600">Korea Hydro Power Station Co., Ltd.</text>
+</svg>

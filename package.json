@@ -1,0 +1,21 @@
+{
+  "name": "khps-k",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "clean": "npm run clean --workspace frontend",
+    "reset-dev": "node scripts/reset-dev.mjs",
+    "dev": "npm run reset-dev && npm run clean && concurrently \"npm run dev --workspace backend\" \"npm run dev:serve --workspace frontend\"",
+    "build": "npm run build --workspace backend && npm run build --workspace frontend",
+    "start": "concurrently \"npm run start --workspace backend\" \"npm run start --workspace frontend\"",
+
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "dependencies": {}
+}

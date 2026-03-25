@@ -1,0 +1,292 @@
+
+> dev
+> npm run reset-dev && npm run clean && concurrently "npm run dev --workspace backend" "npm run dev:serve --workspace frontend"
+
+
+> reset-dev
+> node scripts/reset-dev.mjs
+
+
+> clean
+> npm run clean --workspace frontend
+
+
+> clean
+> cmd /c "if exist .next rmdir /s /q .next"
+
+[1] 
+[1] > dev:serve
+[1] > npm run clean && next dev
+[1] 
+[0] 
+[0] > dev
+[0] > node --watch src/server.js
+[0] 
+[0] [dotenv@17.3.1] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+[0] KHPS backend listening on http://localhost:4000
+[0] Completed running 'src/server.js'. Waiting for file changes before restarting...
+[1] 
+[1] > clean
+[1] > cmd /c "if exist .next rmdir /s /q .next"
+[1] 
+[1]    ▲ Next.js 15.5.14
+[1]    - Local:        http://localhost:3000
+[1]    - Network:      http://10.247.64.111:3000
+[1]    - Environments: .env.local, .env
+[1] 
+[1]  ✓ Starting...
+[1]  ✓ Ready in 2.2s
+[1]  ○ Compiling /[locale] ...
+[1]  ✓ Compiled /[locale] in 8.6s (648 modules)
+[1]  ⨯ Error: ENOENT: no such file or directory, open 'c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\routes-manifest.json'
+[1]     at async L (c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\app\[locale]\[...slug]\page.js:1:18704) {
+[1]   errno: -4058,
+[1]   code: 'ENOENT',
+[1]   syscall: 'open',
+[1]   path: 'c:\\Users\\taeja\\OneDrive\\바탕 화면\\거래 업체\\웹사이트\\khps-k\\frontend\\.next\\routes-manifest.json',
+[1]   page: '/ko/investor-relations/shareholder-meeting'
+[1] }
+[1]  ⨯ Error: ENOENT: no such file or directory, open 'c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\routes-manifest.json'
+[1]     at async L (c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\app\[locale]\page.js:1:12706) {
+[1]   errno: -4058,
+[1]   code: 'ENOENT',
+[1]   syscall: 'open',
+[1]   path: 'c:\\Users\\taeja\\OneDrive\\바탕 화면\\거래 업체\\웹사이트\\khps-k\\frontend\\.next\\routes-manifest.json',
+[1]   page: '/ko'
+[1] }
+[1]  GET /ko/investor-relations/shareholder-meeting 500 in 9714ms
+[1]  GET /ko 500 in 9709ms
+[1]  ○ Compiling /_error ...
+[1]  ✓ Compiled /_error in 3.6s (980 modules)
+[1]  ⨯ [Error: ENOENT: no such file or directory, open 'c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\routes-manifest.json'] {
+[1]   errno: -4058,
+[1]   code: 'ENOENT',
+[1]   syscall: 'open',
+[1]   path: 'c:\\Users\\taeja\\OneDrive\\바탕 화면\\거래 업체\\웹사이트\\khps-k\\frontend\\.next\\routes-manifest.json'
+[1] }
+[1]  ⨯ [Error: ENOENT: no such file or directory, open 'c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\routes-manifest.json'] {
+[1]   errno: -4058,
+[1]   code: 'ENOENT',
+[1]   syscall: 'open',
+[1]   path: 'c:\\Users\\taeja\\OneDrive\\바탕 화면\\거래 업체\\웹사이트\\khps-k\\frontend\\.next\\routes-manifest.json'
+[1] }
+[1] Error: ENOENT: no such file or directory, open 'c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\routes-manifest.json'
+[1]     at async L (c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\app\[locale]\[...slug]\page.js:1:18704) {
+[1]   errno: -4058,
+[1]   code: 'ENOENT',
+[1]   syscall: 'open',
+[1]   path: 'c:\\Users\\taeja\\OneDrive\\바탕 화면\\거래 업체\\웹사이트\\khps-k\\frontend\\.next\\routes-manifest.json',
+[1]   page: '/ko/investor-relations/shareholder-meeting'
+[1] }
+[1] Error: ENOENT: no such file or directory, open 'c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\routes-manifest.json'
+[1]     at async L (c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\app\[locale]\page.js:1:12706) {
+[1]   errno: -4058,
+[1]   code: 'ENOENT',
+[1]   syscall: 'open',
+[1]   path: 'c:\\Users\\taeja\\OneDrive\\바탕 화면\\거래 업체\\웹사이트\\khps-k\\frontend\\.next\\routes-manifest.json',
+[1]   page: '/ko'
+[1] }
+[1]  ⨯ [Error: ENOENT: no such file or directory, open 'c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\routes-manifest.json'] {
+[1]   errno: -4058,
+[1]   code: 'ENOENT',
+[1]   syscall: 'open',
+[1]   path: 'c:\\Users\\taeja\\OneDrive\\바탕 화면\\거래 업체\\웹사이트\\khps-k\\frontend\\.next\\routes-manifest.json'
+[1] }
+[1]  ⨯ [Error: ENOENT: no such file or directory, open 'c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\routes-manifest.json'] {
+[1]   errno: -4058,
+[1]   code: 'ENOENT',
+[1]   syscall: 'open',
+[1]   path: 'c:\\Users\\taeja\\OneDrive\\바탕 화면\\거래 업체\\웹사이트\\khps-k\\frontend\\.next\\routes-manifest.json'
+[1] }
+[1] [Error: ENOENT: no such file or directory, open 'c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\routes-manifest.json'] {
+[1]   errno: -4058,
+[1]   code: 'ENOENT',
+[1]   syscall: 'open',
+[1]   path: 'c:\\Users\\taeja\\OneDrive\\바탕 화면\\거래 업체\\웹사이트\\khps-k\\frontend\\.next\\routes-manifest.json'
+[1] }
+[1] [Error: ENOENT: no such file or directory, open 'c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\routes-manifest.json'] {
+[1]   errno: -4058,
+[1]   code: 'ENOENT',
+[1]   syscall: 'open',
+[1]   path: 'c:\\Users\\taeja\\OneDrive\\바탕 화면\\거래 업체\\웹사이트\\khps-k\\frontend\\.next\\routes-manifest.json'
+[1] }
+[1]  ⨯ Error: Cannot find module './775.js'
+[1] Require stack:
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\webpack-runtime.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\pages\_document.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\require.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\load-components.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\utils.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\swc\options.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\swc\index.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\analysis\parse-module.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\analysis\get-page-static-info.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\lib\router-server.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\lib\start-server.js
+[1]     at <unknown> (c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\app\[locale]\[...slug]\page.js:2:7623)
+[1]     at Object.<anonymous> (c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\app\[locale]\[...slug]\page.js:2:7680) {
+[1]   code: 'MODULE_NOT_FOUND',
+[1]   requireStack: [Array],
+[1]   page: '/ko/investor-relations/shareholder-meeting'
+[1] }
+[1]  ⨯ Error: Cannot find module './775.js'
+[1] Require stack:
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\webpack-runtime.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\pages\_document.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\require.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\load-components.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\utils.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\swc\options.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\swc\index.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\analysis\parse-module.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\analysis\get-page-static-info.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\lib\router-server.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\lib\start-server.js
+[1]     at <unknown> (c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\app\[locale]\page.js:2:9138)
+[1]     at Object.<anonymous> (c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\app\[locale]\page.js:2:9195) {
+[1]   code: 'MODULE_NOT_FOUND',
+[1]   requireStack: [Array],
+[1]   page: '/ko'
+[1] }
+[1]  ⨯ [Error: ENOENT: no such file or directory, open 'c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\routes-manifest.json'] {
+[1]   errno: -4058,
+[1]   code: 'ENOENT',
+[1]   syscall: 'open',
+[1]   path: 'c:\\Users\\taeja\\OneDrive\\바탕 화면\\거래 업체\\웹사이트\\khps-k\\frontend\\.next\\routes-manifest.json'
+[1] }
+[1]  ⨯ [Error: ENOENT: no such file or directory, open 'c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\routes-manifest.json'] {
+[1]   errno: -4058,
+[1]   code: 'ENOENT',
+[1]   syscall: 'open',
+[1]   path: 'c:\\Users\\taeja\\OneDrive\\바탕 화면\\거래 업체\\웹사이트\\khps-k\\frontend\\.next\\routes-manifest.json'
+[1] }
+[1] Error: Cannot find module './775.js'
+[1] Require stack:
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\webpack-runtime.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\pages\_document.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\require.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\load-components.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\utils.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\swc\options.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\swc\index.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\analysis\parse-module.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\analysis\get-page-static-info.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\lib\router-server.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\lib\start-server.js
+[1]     at <unknown> (c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\app\[locale]\[...slug]\page.js:2:7623)
+[1]     at Object.<anonymous> (c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\app\[locale]\[...slug]\page.js:2:7680) {
+[1]   code: 'MODULE_NOT_FOUND',
+[1]   requireStack: [Array],
+[1]   page: '/ko/investor-relations/shareholder-meeting'
+[1] }
+[1] Error: Cannot find module './775.js'
+[1] Require stack:
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\webpack-runtime.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\pages\_document.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\require.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\load-components.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\utils.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\swc\options.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\swc\index.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\analysis\parse-module.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\analysis\get-page-static-info.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\lib\router-server.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\lib\start-server.js
+[1]     at <unknown> (c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\app\[locale]\page.js:2:9138)
+[1]     at Object.<anonymous> (c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\app\[locale]\page.js:2:9195) {
+[1]   code: 'MODULE_NOT_FOUND',
+[1]   requireStack: [Array],
+[1]   page: '/ko'
+[1] }
+[1]  ⨯ [Error: ENOENT: no such file or directory, open 'c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\routes-manifest.json'] {
+[1]   errno: -4058,
+[1]   code: 'ENOENT',
+[1]   syscall: 'open',
+[1]   path: 'c:\\Users\\taeja\\OneDrive\\바탕 화면\\거래 업체\\웹사이트\\khps-k\\frontend\\.next\\routes-manifest.json'
+[1] }
+[1]  ⨯ [Error: ENOENT: no such file or directory, open 'c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\routes-manifest.json'] {
+[1]   errno: -4058,
+[1]   code: 'ENOENT',
+[1]   syscall: 'open',
+[1]   path: 'c:\\Users\\taeja\\OneDrive\\바탕 화면\\거래 업체\\웹사이트\\khps-k\\frontend\\.next\\routes-manifest.json'
+[1] }
+[1] [Error: ENOENT: no such file or directory, open 'c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\routes-manifest.json'] {
+[1]   errno: -4058,
+[1]   code: 'ENOENT',
+[1]   syscall: 'open',
+[1]   path: 'c:\\Users\\taeja\\OneDrive\\바탕 화면\\거래 업체\\웹사이트\\khps-k\\frontend\\.next\\routes-manifest.json'
+[1] }
+[1] [Error: ENOENT: no such file or directory, open 'c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\routes-manifest.json'] {
+[1]   errno: -4058,
+[1]   code: 'ENOENT',
+[1]   syscall: 'open',
+[1]   path: 'c:\\Users\\taeja\\OneDrive\\바탕 화면\\거래 업체\\웹사이트\\khps-k\\frontend\\.next\\routes-manifest.json'
+[1] }
+[1]  GET /ko/investor-relations/shareholder-meeting 500 in 938ms
+[1]  GET /ko/investor-relations/shareholder-meeting 500 in 407ms
+[1]  GET /ko 500 in 933ms
+[1]  GET /ko 500 in 408ms
+[1]  ⨯ Error: Cannot find module './775.js'
+[1] Require stack:
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\webpack-runtime.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\pages\_document.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\require.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\load-components.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\utils.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\swc\options.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\swc\index.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\analysis\parse-module.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\analysis\get-page-static-info.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\lib\router-server.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\lib\start-server.js
+[1]     at <unknown> (c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\app\[locale]\page.js:2:9138)
+[1]     at Object.<anonymous> (c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\app\[locale]\page.js:2:9195) {
+[1]   code: 'MODULE_NOT_FOUND',
+[1]   requireStack: [Array],
+[1]   page: '/ko'
+[1] }
+[1]  ⨯ [Error: ENOENT: no such file or directory, open 'c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\routes-manifest.json'] {
+[1]   errno: -4058,
+[1]   code: 'ENOENT',
+[1]   syscall: 'open',
+[1]   path: 'c:\\Users\\taeja\\OneDrive\\바탕 화면\\거래 업체\\웹사이트\\khps-k\\frontend\\.next\\routes-manifest.json'
+[1] }
+[1] Error: Cannot find module './775.js'
+[1] Require stack:
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\webpack-runtime.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\pages\_document.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\require.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\load-components.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\utils.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\swc\options.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\swc\index.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\analysis\parse-module.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\build\analysis\get-page-static-info.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\lib\router-server.js
+[1] - c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\node_modules\next\dist\server\lib\start-server.js
+[1]     at <unknown> (c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\app\[locale]\page.js:2:9138)
+[1]     at Object.<anonymous> (c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\server\app\[locale]\page.js:2:9195) {
+[1]   code: 'MODULE_NOT_FOUND',
+[1]   requireStack: [Array],
+[1]   page: '/ko'
+[1] }
+[1]  ⨯ [Error: ENOENT: no such file or directory, open 'c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\routes-manifest.json'] {
+[1]   errno: -4058,
+[1]   code: 'ENOENT',
+[1]   syscall: 'open',
+[1]   path: 'c:\\Users\\taeja\\OneDrive\\바탕 화면\\거래 업체\\웹사이트\\khps-k\\frontend\\.next\\routes-manifest.json'
+[1] }
+[1] [Error: ENOENT: no such file or directory, open 'c:\Users\taeja\OneDrive\바탕 화면\거래 업체\웹사이트\khps-k\frontend\.next\routes-manifest.json'] {
+[1]   errno: -4058,
+[1]   code: 'ENOENT',
+[1]   syscall: 'open',
+[1]   path: 'c:\\Users\\taeja\\OneDrive\\바탕 화면\\거래 업체\\웹사이트\\khps-k\\frontend\\.next\\routes-manifest.json'
+[1] }
+[1]  GET /ko 500 in 691ms
+[1]  GET /ko 500 in 309ms

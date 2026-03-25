@@ -1,0 +1,23 @@
+{
+  "name": "khps-frontend",
+  "private": true,
+  "scripts": {
+    "clean": "cmd /c \"if exist .next rmdir /s /q .next\"",
+    "reset-dev": "node ../scripts/reset-dev.mjs",
+    "dev:serve": "npm run clean && next dev",
+    "dev": "npm run reset-dev && npm run dev:serve",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^15.5.6",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.6.0",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "typescript": "^5.9.3"
+  }
+}
