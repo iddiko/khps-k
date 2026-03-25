@@ -1,7 +1,8 @@
 "use client";
 
 import { FormEvent, useEffect, useMemo, useState } from "react";
-import { adminFetch, adminLogin, apiBase } from "@/lib/api";
+import { adminFetch, adminLogin } from "@/lib/api";
+import { apiBase } from "@/lib/apiBase";
 import {
   getPromotionData,
   parseNews,
