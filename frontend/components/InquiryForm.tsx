@@ -11,7 +11,7 @@ const labels = {
     content: "문의 내용",
     submit: "문의 보내기",
     success: "문의가 정상적으로 접수되었습니다.",
-    error: "문의 접수에 실패했습니다. 잠시 후 다시 시도해 주세요."
+    error: "문의 접수에 실패했습니다. 잠시 후 다시 시도해주세요."
   },
   en: {
     name: "Name",
@@ -26,8 +26,8 @@ const labels = {
     email: "邮箱",
     content: "咨询内容",
     submit: "提交咨询",
-    success: "您的咨询已成功提交。",
-    error: "提交失败，请稍后重试。"
+    success: "咨询已成功提交。",
+    error: "咨询提交失败，请稍后再试。"
   }
 } as const;
 

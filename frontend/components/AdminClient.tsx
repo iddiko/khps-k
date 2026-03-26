@@ -2,7 +2,6 @@
 
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import { adminFetch, adminLogin } from "@/lib/api";
-import { apiBase } from "@/lib/apiBase";
 import {
   getPromotionData,
   parseNews,
@@ -61,11 +60,16 @@ export default function AdminClient() {
 
   useEffect(() => {
     const saved = window.localStorage.getItem("khps-admin-token");
-    if (saved) setToken(saved);
+    if (saved) {
+      setToken(saved);
+    }
   }, []);
 
   useEffect(() => {
-    if (!token) return;
+    if (!token) {
+      return;
+    }
+
     window.localStorage.setItem("khps-admin-token", token);
     loadBundle(token).catch(() => setMessage("관리자 데이터를 불러오지 못했습니다."));
   }, [token]);
@@ -89,8 +93,9 @@ export default function AdminClient() {
       id: String(form.get("id") || ""),
       password: String(form.get("password") || "")
     });
+
     setToken(result.token);
-    setMessage("로그인되었습니다.");
+    setMessage("관리자 로그인이 완료되었습니다.");
   }
 
   function onLogout() {
@@ -102,7 +107,9 @@ export default function AdminClient() {
 
   async function addMenu(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!token) return;
+    if (!token) {
+      return;
+    }
 
     const form = new FormData(event.currentTarget);
     await adminFetch("/menu", token, {
@@ -128,7 +135,9 @@ export default function AdminClient() {
 
   async function saveSite(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!token || !bundle) return;
+    if (!token || !bundle) {
+      return;
+    }
 
     const form = new FormData(event.currentTarget);
     const partnerLogos = String(form.get("partnerLogos") || "")
@@ -181,15 +190,19 @@ export default function AdminClient() {
     });
 
     await loadBundle(token);
-    setMessage("사이트 정보가 저장되었습니다.");
+    setMessage("사이트 기본 정보가 저장되었습니다.");
   }
 
   async function savePage(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!token || !bundle || !selectedPageId) return;
+    if (!token || !bundle || !selectedPageId) {
+      return;
+    }
 
     const target = bundle.pages.find((item) => item.id === selectedPageId);
-    if (!target) return;
+    if (!target) {
+      return;
+    }
 
     const form = new FormData(event.currentTarget);
     await adminFetch("/pages", token, {
@@ -223,7 +236,9 @@ export default function AdminClient() {
 
   async function replyInquiry(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!token) return;
+    if (!token) {
+      return;
+    }
 
     const form = new FormData(event.currentTarget);
     await adminFetch("/inquiry/reply", token, {
@@ -242,7 +257,9 @@ export default function AdminClient() {
 
   async function uploadAsset(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!token) return;
+    if (!token) {
+      return;
+    }
 
     const form = new FormData(event.currentTarget);
     const result = await adminFetch<{ path: string; originalName?: string }>("/upload", token, {
@@ -250,7 +267,7 @@ export default function AdminClient() {
       body: form
     });
 
-    setMessage(`업로드 완료: ${apiBase}${result.path}`);
+    setMessage(`업로드 완료: ${result.path}`);
   }
 
   const selectedPage = useMemo(
@@ -264,8 +281,8 @@ export default function AdminClient() {
         <div className="card">
           <h1>관리자 로그인</h1>
           <form onSubmit={onLogin}>
-            <input name="id" placeholder="ID" defaultValue="admin" />
-            <input name="password" type="password" placeholder="Password" />
+            <input name="id" placeholder="아이디" defaultValue="admin" />
+            <input name="password" type="password" placeholder="비밀번호" />
             <button type="submit">로그인</button>
           </form>
           {message ? <div className="small">{message}</div> : null}
@@ -289,24 +306,25 @@ export default function AdminClient() {
       <div className="admin-topbar">
         <div className="section-title">
           <h1>관리자 대시보드</h1>
-          <p>메뉴, 페이지, 사이트 정보, 홍보자료, 주주총회 PDF 자료를 한 곳에서 관리할 수 있습니다.</p>
+          <p>메뉴, 페이지, 사이트 기본 정보, 공지사항, 뉴스, 주주총회 문서, 문의를 한곳에서 관리합니다.</p>
         </div>
         <button type="button" className="logout-button" onClick={onLogout}>
           로그아웃
         </button>
       </div>
+
       {message ? <div className="card small">{message}</div> : null}
 
       <div className="admin-grid">
         <div className="card">
           <h3>메뉴 추가</h3>
           <form onSubmit={addMenu}>
-            <input name="parentKo" placeholder="상위 메뉴 KO" required />
-            <input name="parentEn" placeholder="상위 메뉴 EN" required />
-            <input name="parentZh" placeholder="상위 메뉴 ZH" required />
-            <input name="childKo" placeholder="하위 메뉴 KO" required />
-            <input name="childEn" placeholder="하위 메뉴 EN" required />
-            <input name="childZh" placeholder="하위 메뉴 ZH" required />
+            <input name="parentKo" placeholder="상위 메뉴명 KO" required />
+            <input name="parentEn" placeholder="상위 메뉴명 EN" required />
+            <input name="parentZh" placeholder="상위 메뉴명 ZH" required />
+            <input name="childKo" placeholder="하위 메뉴명 KO" required />
+            <input name="childEn" placeholder="하위 메뉴명 EN" required />
+            <input name="childZh" placeholder="하위 메뉴명 ZH" required />
             <button type="submit">메뉴 생성</button>
           </form>
         </div>
@@ -318,7 +336,7 @@ export default function AdminClient() {
             <button type="submit">업로드</button>
           </form>
           <div className="small">
-            이미지와 PDF를 업로드한 뒤 반환된 URL을 페이지 본문이나 주주총회 자료실에 붙여 넣으면 됩니다.
+            업로드 후 반환되는 URL을 페이지 본문, 뉴스 이미지, 주주총회 PDF 링크에 그대로 사용할 수 있습니다.
           </div>
         </div>
       </div>
@@ -328,7 +346,7 @@ export default function AdminClient() {
         <form onSubmit={saveSite}>
           <input name="contactEmail" defaultValue={bundle.site.contactEmail} placeholder="대표 이메일" />
           <input name="contactPhone" defaultValue={bundle.site.contactPhone} placeholder="대표 연락처" />
-          <input name="ceoName" defaultValue={bundle.site.companyProfile.ceoName} placeholder="대표명" />
+          <input name="ceoName" defaultValue={bundle.site.companyProfile.ceoName} placeholder="대표자명" />
           <input name="ceoImage" defaultValue={bundle.site.companyProfile.ceoImage} placeholder="대표 이미지 URL" />
           <textarea name="ceoMessageKo" defaultValue={bundle.site.companyProfile.ceoMessage.ko} placeholder="대표 인사말 KO" />
           <textarea name="ceoMessageEn" defaultValue={bundle.site.companyProfile.ceoMessage.en} placeholder="대표 인사말 EN" />
@@ -359,7 +377,7 @@ export default function AdminClient() {
           <textarea
             name="shareholderMeetings"
             defaultValue={serializeShareholderMeetings(bundle.site.shareholderMeetings || [])}
-            placeholder={"주주총회 자료: 날짜|제목KO|제목EN|제목ZH|요약KO|요약EN|요약ZH|파일URL"}
+            placeholder={"주주총회 문서: 날짜|제목KO|제목EN|제목ZH|요약KO|요약EN|요약ZH|파일URL"}
           />
           <button type="submit">사이트 정보 저장</button>
         </form>
@@ -367,7 +385,7 @@ export default function AdminClient() {
 
       <div className="card">
         <h3>페이지 편집</h3>
-        <select value={selectedPage?.id} onChange={(e) => setSelectedPageId(e.target.value)}>
+        <select value={selectedPage?.id} onChange={(event) => setSelectedPageId(event.target.value)}>
           {bundle.pages.map((page) => (
             <option key={page.id} value={page.id}>
               {page.slugPath.join("/")}
@@ -376,7 +394,7 @@ export default function AdminClient() {
         </select>
         {selectedPage ? (
           <form onSubmit={savePage}>
-            <div className="small">선택한 페이지의 히어로 이미지와 제목, 설명, 본문 HTML을 직접 수정할 수 있습니다.</div>
+            <div className="small">선택한 페이지의 히어로 이미지, 제목, 설명, 본문 HTML을 직접 편집할 수 있습니다.</div>
             <input name="heroImage" defaultValue={selectedPage.hero.image} placeholder="Hero image URL" />
             <input name="heroTitleKo" defaultValue={selectedPage.hero.title.ko} placeholder="제목 KO" />
             <input name="heroTitleEn" defaultValue={selectedPage.hero.title.en} placeholder="제목 EN" />

@@ -1,9 +1,9 @@
-import { getMenus, getSiteConfig, toLocale, t } from "@/lib/api";
+import { toLocale, t } from "@/lib/api";
 import HeroSlider from "@/components/HeroSlider";
 import PartnerMarquee from "@/components/PartnerMarquee";
 import { getPromotionData } from "@/lib/promotion-data";
-import { Locale } from "@/lib/types";
 import Link from "next/link";
+import { getPublicMenus, getPublicSiteConfig } from "@/lib/server/public-data";
 
 export default async function HomePage({
   params
@@ -12,8 +12,8 @@ export default async function HomePage({
 }) {
   const { locale: rawLocale } = await params;
   const locale = toLocale(rawLocale);
-  const site = await getSiteConfig();
-  const menus = await getMenus();
+  const site = await getPublicSiteConfig();
+  const menus = await getPublicMenus();
   const promotion = getPromotionData(site);
   
   const homeData = site.home || {};

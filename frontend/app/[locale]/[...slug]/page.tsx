@@ -1,8 +1,9 @@
 import InquiryForm from "@/components/InquiryForm";
 import PageHero from "@/components/PageHero";
 import PromotionCenterClient from "@/components/PromotionCenterClient";
-import { getMenus, getPage, getSiteConfig, t, toLocale } from "@/lib/api";
+import { t, toLocale } from "@/lib/api";
 import { getPromotionData } from "@/lib/promotion-data";
+import { getPublicMenus, getPublicPage, getPublicSiteConfig } from "@/lib/server/public-data";
 
 export default async function DynamicPage({
   params,
@@ -14,9 +15,9 @@ export default async function DynamicPage({
   const { locale: rawLocale, slug } = await params;
   const resolvedSearchParams = searchParams ? await searchParams : undefined;
   const locale = toLocale(rawLocale);
-  const page = await getPage(slug);
-  const site = await getSiteConfig();
-  const menus = await getMenus();
+  const page = await getPublicPage(slug);
+  const site = await getPublicSiteConfig();
+  const menus = await getPublicMenus();
   const path = slug.join("/");
   const currentMenu = menus.find((menu) => menu.slug === slug[0]);
   const promotion = getPromotionData(site);

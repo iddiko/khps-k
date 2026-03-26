@@ -19,12 +19,10 @@ $targets = Get-CimInstance Win32_Process -Filter "name = 'node.exe'" | Where-Obj
       $_.CommandLine -like "*$repo*" -and (
         $_.CommandLine -like "*concurrently\\dist\\bin\\concurrently*" -or
         $_.CommandLine -like "*next\\dist\\bin\\next*" -or
-        $_.CommandLine -like "*next\\dist\\server\\lib\\start-server.js*" -or
-        $_.CommandLine -like "*node --watch src/server.js*"
+        $_.CommandLine -like "*next\\dist\\server\\lib\\start-server.js*"
       )
     ) -or
-    $_.CommandLine -like "*run dev --workspace frontend*" -or
-    $_.CommandLine -like "*run dev --workspace backend*"
+    $_.CommandLine -like "*run dev --workspace frontend*"
   )
 }
 
